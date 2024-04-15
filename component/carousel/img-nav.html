@@ -1,0 +1,690 @@
+<html>
+    <head>
+        <title>Project Blueprint | Component</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <!-- js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../../js/carbon-components.min.js"></script>
+
+    </head>
+    <body>
+
+        <!-- navbar starts -->
+
+        <div class="custom-navbar">
+            <div class="bx--row">
+                <a href="../../index.html" class="custom-navbar-link-logo">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Project <strong>Blueprint</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="../../layout.html" class="custom-navbar-link">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Layout
+                        </div>
+                    </div>
+                </a>
+                <a href="../../component.html" class="custom-navbar-link custom-navbar-link-active">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Component
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- navbar ends -->
+
+        <!-- banner starts -->
+
+        <div class="header-banner" style="background: url(../../assets/Component-Banner.jpg);">
+
+        </div>
+
+        <!-- banner ends -->
+
+        <!-- breadcrumb starts -->
+
+        <div class="custom-breadcrumb">
+            <div class="breadcrumb-link-holder">
+                <p>
+                    <a href="../../index.html">
+                        Home
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <a href="../../component.html">
+                        Component
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <span>
+                        Image Paginator
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- breadcrumb ends -->
+
+        <!-- content starts -->
+
+        <div class="custom-content-container">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12">
+                        <h1 class="preview-title">
+                            <strong>Image Paginator Carousel</strong>
+                            Component
+                        </h1>
+
+                        <div class="bx--row">
+                            <div class="bx--col-lg-6">
+                                <!-- <img src="../assets/card/namecard-h.PNG" class="img-preview" alt=""> -->
+                                <div class="bx--row">
+                                    <div class="bx--col-lg-1"></div>
+                                    <div class="bx--col-lg-10">
+                                        <div class="component-container">
+                                            <img src="../../assets/gif/img-paginator.gif" class="component-preview" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="bx--col-lg-1"></div>
+                                </div>
+                                
+
+                            </div>
+                            <div class="bx--col-lg-6">
+                                <div class="code-wrapper">
+                                    <div class="code-wrapper-header bg-000000"></div>
+                                    <textarea class="code-area" id="sample" disabled>
+<style>
+    .document-center {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*We do this because the carousel needs to be 100% width 
+in order for the aspect ratio trick to work*/
+    .carousel-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /*This is the actual carousel. Overflow hidden acts as a mask*/
+    .carousel {
+        position: relative;
+        width: 100%;
+        /*Width of image is 980px. Height is 570px.*/
+        padding-top: calc(250 / 600 * 100%);
+        overflow: hidden;
+    }
+    .carousel-container img {
+        width: 100%;
+        height: 100%;
+    }
+    .left-arrow {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 147px;
+        cursor: pointer;
+    }
+    .left-arrow:hover {
+        background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+    }
+    .left-arrow:hover .chevron,
+    .right-arrow:hover .chevron {
+        border-color: #e6e6e6;
+    }
+    .right-arrow {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 147px;
+        cursor: pointer;
+    }
+    .right-arrow:hover {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+    }
+    .chevron {
+        width: 25px;
+        height: 25px;
+        border: solid rgba(255, 255, 255, 0.5);
+        border-width: 10px 10px 0 0;
+    }
+    .chevron.right {
+        transform: rotate(45deg);
+    }
+    .chevron.left {
+        transform: rotate(-135deg);
+    }
+    .circle-container {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 45px;
+    }
+    .circle {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    /* image paginator 1 src */
+    .thumbs01 {
+        content: url('https://bundles.yourlearning.ibm.com/ibm/gbs-learning-and-knowledge/admin/assets/RKWRGVYMPYEVQMYR/ProjectBP_Carousel_Smiley01.png');
+    }
+
+    /* image paginator 2 src */
+    .thumbs02 {
+        content: url(https://bundles.yourlearning.ibm.com/ibm/gbs-learning-and-knowledge/admin/assets/WWJDPNRQKRPYE2K7/ProjectBP_Carousel_Smiley02.png);
+    }
+
+    /* image paginator 3 src */
+    .thumbs03 {
+        content: url(https://bundles.yourlearning.ibm.com/ibm/gbs-learning-and-knowledge/admin/assets/YZMGRVPWNPRWADMG/ProjectBP_Carousel_Smiley03.png);
+    }
+
+    /* image paginator 4 src */
+    .thumbs04 {
+        content: url(https://bundles.yourlearning.ibm.com/ibm/gbs-learning-and-knowledge/admin/assets/YZMGRVPWNPRW9BAY/ProjectBP_Carousel_Smiley04.png);
+    }
+
+    .circle-fill {
+        background-color: white;
+        border: 2px solid #fff;
+    }
+    .flex-1 {
+        flex: 1;
+        padding: 0 2em 1em 5em;
+    }
+    .flex-2 {
+        flex: 2;
+    }
+    .flex-3 {
+        flex: 3;
+    }
+    .text-container {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 45px;
+        left: 0;
+        width: 100%;
+        color: white; /* content font color */
+        text-shadow: 1px 1px black;
+        text-align: center;
+    }
+    .text-container p:nth-child(1) {
+        margin: 10px 100px;
+        font-size: 1.5em;
+    }
+    .text-container p:nth-child(2) {
+        margin: 10px 78px 20px 50px;
+    }
+    .carousel-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #3a3a3a; /* carousel background color */
+    }
+
+    /* Animations */
+    @keyframes toRight {
+        0% {
+            left: 0;
+        }
+
+        100% {
+            left: 100%;
+        }
+    }
+    @keyframes toLeft {
+        0% {
+            left: 0;
+        }
+
+        100% {
+            left: -100%;
+        }
+    }
+    @keyframes comeRight {
+        0% {
+            left: 100%;
+        }
+
+        100% {
+            left: 0;
+        }
+    }
+    @keyframes comeLeft {
+        0% {
+            left: -100%;
+        }
+
+        100% {
+            left: 0;
+        }
+    }
+</style>
+
+<div class="document-center">
+    <!--This carousel-container only exists so we can do the 
+        aspect ratio tricks in CSS-->
+    <div class="carousel-container">
+        <div class="carousel" id="carousel-1" auto-scroll="7000">
+            
+            <!-- slide 1 -->
+            <section class="carousel-screen">
+                <div class="text-container">
+                    <div class="flex-1">
+                        <!-- image src -->
+                        <img src="https://bundles.yourlearning.ibm.com/ibm/gbs-learning-and-knowledge/admin/assets/RKWRGVYMPYEVQMYR/ProjectBP_Carousel_Smiley01.png" alt="">
+                    </div>
+
+                    <!-- slide content -->
+                    <div class="flex-3">
+                        <h5>[Title]</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae a animi reprehenderit aut, consequuntur dignissimos est dolorem inventore impedit accusantium.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- slide 2 -->
+            <section class="carousel-screen">
+                <div class="text-container">
+                    <div class="flex-1">
+                        <!-- image src -->
+                        <img src="https://bundles.yourlearning.ibm.com/ibm/gbs-learning-and-knowledge/admin/assets/WWJDPNRQKRPYE2K7/ProjectBP_Carousel_Smiley02.png" alt="">
+                    </div>
+
+                    <!-- slide content -->
+                    <div class="flex-3">
+                        <h5>[Title]</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae a animi reprehenderit aut, consequuntur dignissimos est dolorem inventore impedit accusantium.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- slide 3 -->
+            <section class="carousel-screen">
+                <div class="text-container">
+                    <div class="flex-1">
+                        <!-- image src -->
+                        <img src="https://bundles.yourlearning.ibm.com/ibm/gbs-learning-and-knowledge/admin/assets/YZMGRVPWNPRWADMG/ProjectBP_Carousel_Smiley03.png" alt="">
+                    </div>
+
+                    <!-- slide content -->
+                    <div class="flex-3">
+                        <h5>[Title]</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae a animi reprehenderit aut, consequuntur dignissimos est dolorem inventore impedit accusantium.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- slide 4 -->
+            <section class="carousel-screen">
+                <div class="text-container">
+                    <div class="flex-1">
+                        <!-- image src -->
+                        <img src="https://bundles.yourlearning.ibm.com/ibm/gbs-learning-and-knowledge/admin/assets/YZMGRVPWNPRW9BAY/ProjectBP_Carousel_Smiley04.png" alt="">
+                    </div>
+
+                    <!-- slide content -->
+                    <div class="flex-3">
+                        <h5>[Title]</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae a animi reprehenderit aut, consequuntur dignissimos est dolorem inventore impedit accusantium.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- image pagination container -->
+            <section class="circle-container">
+                <!--These 'circles' need to match the number of carousel screens-->
+                <!-- paginator 1 -->
+                <div class="circle thumbs01"></div>
+                <!-- paginator 2 -->
+                <div class="circle thumbs02"></div>
+                <!-- paginator 3 -->
+                <div class="circle thumbs03"></div>
+                <!-- paginator 4 -->
+                <div class="circle thumbs04"></div>
+            </section>
+
+            <!-- left arrow -->
+            <div class="left-arrow" tabindex="0">
+                <span class="chevron left"></span>
+            </div>
+
+            <!-- right arrow -->
+            <div class="right-arrow" tabindex="0">
+                <span class="chevron right"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="carousel-1-code.js"></script>
+<!--Script. Do not touch!-->
+<script>
+    //Right Arrow & Left Arrow
+    let rightArrow = document.querySelector("#carousel-1 .right-arrow");
+    let leftArrow = document.querySelector("#carousel-1 .left-arrow");
+    //List of all of the screens in carousel
+    let screenStore = document.querySelectorAll("#carousel-1 .carousel-screen");
+    let numOfScreens = screenStore.length;
+    //List of all the circle stores
+    let circleStore = document.querySelectorAll("#carousel-1 .circle-container .circle");
+    //number to target main screen
+    let currentScreen = 0;
+    //currently in animation or not
+    let inAnim = false;
+    //Animation Time
+    let animTime = 500;
+
+    //Sort out starting position
+    sortPositioning(screenStore[currentScreen], screenStore[currentScreen - 1], screenStore[currentScreen + 1]);
+    //Sort out circle styling
+    highlightCircle(circleStore[0]);
+
+    //User clicks on rightArrow
+    rightArrow.addEventListener("click", () => {
+        startAnim("right");
+    });
+
+    //User clicks on the leftArrow
+    leftArrow.addEventListener("click", () => {
+        startAnim("left");
+    });
+
+    //Start animation. Either towards left or right
+    function startAnim(direction) {
+        if (!inAnim) {
+            inAnim = true;
+            if (direction === "right") {
+                moveRight();
+                highlightCircle(circleStore[currentScreen + 1], "right");
+            } else if (direction === "left") {
+                moveLeft();
+                highlightCircle(circleStore[currentScreen - 1], "left");
+            } else {
+                isAnim = false;
+                return
+            }
+        }
+    }
+
+    //Move to the right
+    function moveRight() {
+        //Move towards Next screen as usual
+        if (currentScreen < numOfScreens - 1) {
+            toLeft(screenStore[currentScreen]);
+            comeRight(screenStore[currentScreen + 1]);
+            setTimeout(() => {
+                inAnim = false;
+                currentScreen++;
+                sortPositioning(screenStore[currentScreen], screenStore[currentScreen - 1], screenStore[currentScreen + 1]);
+            }, animTime)
+        } else {
+            //Or the screen coming in is the first screen again
+            toLeft(screenStore[currentScreen]);
+            comeRight(screenStore[0]);
+            setTimeout(() => {
+                inAnim = false;
+                currentScreen = 0;
+                sortPositioning(screenStore[currentScreen], screenStore[currentScreen - 1], screenStore[currentScreen + 1]);
+            }, animTime)
+        }
+    }
+
+    //Move to the left
+    function moveLeft() {
+        //Move back to screen previously on, as usual
+        if (currentScreen > 0) {
+            toRight(screenStore[currentScreen]);
+            comeLeft(screenStore[currentScreen - 1]);
+            setTimeout(() => {
+                inAnim = false;
+                currentScreen--;
+                sortPositioning(screenStore[currentScreen], screenStore[currentScreen - 1], screenStore[currentScreen + 1]);
+            }, animTime)
+        } else {
+            //Move back to the last screen container
+            toRight(screenStore[currentScreen]);
+            comeLeft(screenStore[numOfScreens - 1]);
+            setTimeout(() => {
+                inAnim = false;
+                currentScreen = numOfScreens - 1;
+                sortPositioning(screenStore[currentScreen], screenStore[currentScreen - 1], screenStore[currentScreen + 1]);
+            }, animTime)
+        }
+    }
+
+    //User clicks on one of the circles
+    circleStore.forEach(circle => {
+        circle.addEventListener("click", event => {
+            if (!inAnim) {
+                //Convert NodeList to Array, to use 'indexOf' method.
+                let circleStoreArray = Array.prototype.slice.call(circleStore);
+                let circleIndex = circleStoreArray.indexOf(event.target);
+                //Configure circle styling
+                highlightCircle(event.target);
+                //Work out whether we need to move right or left, or nowhere.
+                if (circleIndex > currentScreen) {
+                    changeScreenCircleClick(circleIndex, "right");
+                } else if (circleIndex < currentScreen) {
+                    changeScreenCircleClick(circleIndex, "left");
+                }
+            }
+        })
+    })
+
+    function changeScreenCircleClick(circleIndex, direction) {
+        inAnim = true;
+        if (direction === "right") {
+            sortPositioning(screenStore[currentScreen], screenStore[currentScreen - 1], screenStore[circleIndex]);
+            toLeft(screenStore[currentScreen]);
+            comeRight(screenStore[circleIndex]);
+        } else if (direction === "left") {
+            sortPositioning(screenStore[currentScreen], screenStore[circleIndex], screenStore[currentScreen + 1]);
+            toRight(screenStore[currentScreen]);
+            comeLeft(screenStore[circleIndex]);
+        } else {
+            inAnim = false;
+            return
+        }
+        setTimeout(() => {
+            inAnim = false;
+            currentScreen = circleIndex;
+            sortPositioning(screenStore[currentScreen], screenStore[currentScreen - 1], screenStore[currentScreen + 1]);
+        }, animTime)
+    }
+
+    function highlightCircle(circleSelect, direction) {
+        if (circleSelect === undefined && direction === "right") {
+            circleSelect = circleStore[0];
+        } else if (circleSelect === undefined && direction === "left") {
+            circleSelect = circleStore[numOfScreens - 1];
+        }
+        circleStore.forEach(circle => {
+            if (circle === circleSelect) {
+                circle.classList.add("circle-fill");
+            } else {
+                circle.classList.remove("circle-fill");
+            }
+        })
+    }
+
+
+    //Animation methods
+    function toLeft(screen) {
+        screen.style.animation = "toLeft 0.5s ease-in-out forwards";
+        setTimeout(() => {
+            screen.style.animation = "";
+        }, animTime);
+    }
+
+    function toRight(screen) {
+        screen.style.animation = "toRight 0.5s ease-in-out forwards";
+        setTimeout(() => {
+            screen.style.animation = "";
+        }, animTime);
+    }
+
+    function comeRight(screen) {
+        screen.style.animation = "comeRight 0.5s ease-in-out forwards";
+        setTimeout(() => {
+            screen.style.animation = "";
+        }, animTime);
+    }
+
+    function comeLeft(screen) {
+        screen.style.animation = "comeLeft 0.5s ease-in-out forwards";
+        setTimeout(() => {
+            screen.style.animation = "";
+        }, animTime);
+    }
+
+
+
+    //Sort positioning. Don't want images to overlap
+    function sortPositioning(mainScreen, leftScreen, rightScreen) {
+        //If right screen is undefined. We need to repeat first screen again
+        if (rightScreen === undefined) {
+            rightScreen = screenStore[0];
+        }
+        //If left screen is undefined. We use the last screen
+        if (leftScreen === undefined) {
+            leftScreen = screenStore[numOfScreens - 1];
+        }
+        screenStore.forEach(screen => {
+            if (screen === mainScreen) {
+                screen.style.display = "block";
+                screen.style.left = "0px";
+            } else if (screen === leftScreen) {
+                screen.style.display = "block";
+                screen.style.left = "-100%";
+            } else if (screen === rightScreen) {
+                screen.style.display = "block";
+                screen.style.left = "100%";
+            } else {
+                screen.style.display = "none";
+            }
+        })
+    }
+</script>
+                                    </textarea>
+                                    
+                                    <div class="code-btn-wrapper">
+                                        <div class="bx--row">
+                                            <div class="bx--col">
+                                                <a class="code-btn" href="../../xd/Template_Image Paginator Carousel.xd" download="">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M30 25L28.586 23.586 26 26.172 26 18 24 18 24 26.172 21.414 23.586 20 25 25 30 30 25z"></path><path d="M18,28H8V4h8v6a2.0058,2.0058,0,0,0,2,2h6v3l2,0V10a.9092.9092,0,0,0-.3-.7l-7-7A.9087.9087,0,0,0,18,2H8A2.0058,2.0058,0,0,0,6,4V28a2.0058,2.0058,0,0,0,2,2H18ZM18,4.4,23.6,10H18Z"></path></svg>
+                                                        Download XD File
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="bx--col">
+                                                <div class="code-btn" id="copy" onclick="copyText()">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"></path><path d="M5.91 15H26.080000000000002V17H5.91z" transform="rotate(-75 15.996 16)"></path></svg>
+                                                        Copy Code
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <!-- <button id="copy" class="" onclick="copyText()">copy to clipboard</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        <h2 class="preview-title">How to use?</h2>
+                        <br>
+                        <div class="user-guide-container">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content ends -->
+
+        <!-- footer starts -->
+
+        <div class="custom-footer bg-000000">
+            <p class="txt-ffffff">
+                Learning Solutions Development PH &#169; 2022
+            </p>
+        </div>
+
+        <!-- footer ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        <script>
+            function copyText() {
+                const copyText = document.getElementById("sample");
+
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+
+                navigator.clipboard.writeText(copyText.value);
+
+                
+            }
+        </script>
+
+
+
+        
+    </body>
+</html>

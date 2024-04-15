@@ -1,0 +1,332 @@
+<html>
+    <head>
+        <title>Project Blueprint | Component</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <!-- js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../../js/carbon-components.min.js"></script>
+
+    </head>
+    <body>
+
+        <!-- navbar starts -->
+
+        <div class="custom-navbar">
+            <div class="bx--row">
+                <a href="../../index.html" class="custom-navbar-link-logo">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Project <strong>Blueprint</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="../../layout.html" class="custom-navbar-link">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Layout
+                        </div>
+                    </div>
+                </a>
+                <a href="../../component.html" class="custom-navbar-link custom-navbar-link-active">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Component
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- navbar ends -->
+
+        <!-- banner starts -->
+
+        <div class="header-banner" style="background: url(../../assets/Component-Banner.jpg);">
+
+        </div>
+
+        <!-- banner ends -->
+
+        <!-- breadcrumb starts -->
+
+        <div class="custom-breadcrumb">
+            <div class="breadcrumb-link-holder">
+                <p>
+                    <a href="../../index.html">
+                        Home
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <a href="../../component.html">
+                        Component
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <span>
+                        Name Card with Description
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- breadcrumb ends -->
+
+        <!-- content starts -->
+
+        <div class="custom-content-container">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12">
+                        <h1 class="preview-title">
+                            <strong>Name Card with Description</strong>
+                            Component
+                        </h1>
+
+                        <div class="bx--row">
+                            <div class="bx--col-lg-6">
+                                <div class="bx--row">
+                                    <div class="bx--col-lg-2"></div>
+                                    <div class="bx--col-lg-8">
+                                        <div class="component-container">
+                                            <img src="../../assets/card/Thumbnail_Name Card B.png" class="component-preview" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="bx--col-lg-2"></div>
+                                </div>
+                                
+
+                            </div>
+                            <div class="bx--col-lg-6">
+                                <div class="code-wrapper">
+                                    <div class="code-wrapper-header bg-000000"></div>
+                                    <textarea class="code-area" id="sample" disabled>
+<style>
+    .card6 {
+        margin: 0 auto;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: inherit;
+    }
+    .card6 .view-larger-link {
+        display: none !important;
+    }
+    .card6 .profile-card {
+        background-color: #f4f4f4; /* card background color */
+        margin: 5px;
+        box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    }
+    .card6 .profile-pic {
+        max-width: 50% !important;
+        border-radius: 50%;
+        position: absolute;
+        top: -65px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 1;
+        max-width: 100px;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+    .card6 .profile-info {
+        color: #000; /* card content font color */
+        padding: 25px;
+        position: relative;
+        margin-top: 15px;
+    }
+    .card6 .profile-info h2 {
+        color: #E8E8E8; /* card title font color */
+        letter-spacing: 4px;
+        padding-bottom: 12px;
+    }
+    .card6 .profile-info span {
+        display: block;
+        font-size: 12px;
+        color: blue; /* card subtitle font color */
+        letter-spacing: 2px;
+    }
+    .card6 .profile-info a {
+        color: #4CB493;
+    }
+    .card6 .profile-info i {
+        padding: 15px 35px 0px 35px;
+    }
+
+    /* Underline From Center */
+    .card6 .hvr-underline-from-center {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        position: relative;
+        overflow: hidden;
+    }
+    .card6 .hvr-underline-from-center:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 52%;
+        right: 52%;
+        bottom: 0;
+        background: #FFFFFF;
+        border-radius: 50%;
+        height: 3px;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+</style>
+    
+<div class="card6">
+    <!-- card container -->
+    <div class="profile-card text-center">
+        <!-- card header image src -->
+        <img class="img-responsive" src="https://www.fastcat.com.ph/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
+        <!-- card content -->
+        <div class="profile-info">
+            <!-- circular image src -->
+            <img class="profile-pic" src="https://www.fastcat.com.ph/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
+            <h2 class="hvr-underline-from-center">
+                <!-- card name -->
+                Name
+                <!-- card position -->
+                <span>Position</span>
+            </h2>
+            <!-- card description -->
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            </div>
+        </div>
+    
+    </div>
+</div>
+                                    </textarea>
+                                    
+                                    <div class="code-btn-wrapper">
+                                        <div class="bx--row">
+                                            <div class="bx--col">
+                                                <a class="code-btn" href="../../xd/Template_Name Card.xd" download="">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M30 25L28.586 23.586 26 26.172 26 18 24 18 24 26.172 21.414 23.586 20 25 25 30 30 25z"></path><path d="M18,28H8V4h8v6a2.0058,2.0058,0,0,0,2,2h6v3l2,0V10a.9092.9092,0,0,0-.3-.7l-7-7A.9087.9087,0,0,0,18,2H8A2.0058,2.0058,0,0,0,6,4V28a2.0058,2.0058,0,0,0,2,2H18ZM18,4.4,23.6,10H18Z"></path></svg>
+                                                        Download XD File
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="bx--col">
+                                                <div class="code-btn" id="copy" onclick="copyText()">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"></path><path d="M5.91 15H26.080000000000002V17H5.91z" transform="rotate(-75 15.996 16)"></path></svg>
+                                                        Copy Code
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <!-- <button id="copy" class="" onclick="copyText()">copy to clipboard</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <hr>
+                        <h2 class="preview-title">How to use?</h2>
+                        <br>
+                        <div class="user-guide-container">
+                            <img src="../../assets/user-guide/Step by Step_Card with Banner.png" class="user-guide-img" alt="">
+                            <p class="txt-ug ug-step-1">
+                                Create a section by drag and dropping the &#39;<span class="blue">Section</span>&#39; component into the stage and within the section, drag and drop the
+                                &#39;<span class="red">HTML</span>&#39; component.
+                            </p>
+                            <p class="txt-ug ug-step-2">
+                                Upon selecting which component to use, you can simply copy the HTML code provided in the repository site buy clicking the 
+                                &#39;<strong>Copy Code</strong>&#39; button.
+                                <br><br>
+                                A downloadable template is also available for use for wireframing by clicking the 
+                                &#39;<strong>Downloadable XD File</strong>&#39;.
+                            </p>
+                            <p class="txt-ug ug-step-3">
+                                Paste the code on the <strong>HTML</strong> section to replicate the desired component into the Bundles site.
+                            </p>
+                            <p class="txt-ug ug-step-4-1-img-card-v">
+                                Look for the line <br>
+                                &#39;<span class="green">&lt;!-- image container --&gt;</span>&#39;
+                                <br>
+                                to edit the card&#39;s banner image.
+                            </p>
+                            <p class="txt-ug ug-step-4-2-img-card-v">
+                                Highlight the <span class="blue">image link</span> and then click 
+                                &#39;<strong>Browse Assets</strong>&#39;
+                                to upload an image to replace the image holder.
+                            </p>
+                            <p class="txt-ug ug-step-5-img-card-v">
+                                And look for the line, <br>
+                                &#39;<span class="green">&lt;!-- card content --&gt;</span>&#39;,
+                                <br>
+                                to edit the card&#39;s text contents.
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content ends -->
+
+        <!-- footer starts -->
+
+        <div class="custom-footer bg-000000">
+            <p class="txt-ffffff">
+                Learning Solutions Development PH &#169; 2022
+            </p>
+        </div>
+
+        <!-- footer ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        <script>
+            function copyText() {
+                const copyText = document.getElementById("sample");
+
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+
+                navigator.clipboard.writeText(copyText.value);
+
+                
+            }
+        </script>
+
+
+
+        
+    </body>
+</html>

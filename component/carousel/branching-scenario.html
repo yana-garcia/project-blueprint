@@ -1,0 +1,391 @@
+<html>
+    <head>
+        <title>Project Blueprint | Component</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <!-- js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../../js/carbon-components.min.js"></script>
+
+    </head>
+    <body>
+
+        <!-- navbar starts -->
+
+        <div class="custom-navbar">
+            <div class="bx--row">
+                <a href="../../index.html" class="custom-navbar-link-logo">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Project <strong>Blueprint</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="../../layout.html" class="custom-navbar-link">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Layout
+                        </div>
+                    </div>
+                </a>
+                <a href="../../component.html" class="custom-navbar-link custom-navbar-link-active">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Component
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- navbar ends -->
+
+        <!-- banner starts -->
+
+        <div class="header-banner" style="background: url(../../assets/Component-Banner.jpg);">
+
+        </div>
+
+        <!-- banner ends -->
+
+        <!-- breadcrumb starts -->
+
+        <div class="custom-breadcrumb">
+            <div class="breadcrumb-link-holder">
+                <p>
+                    <a href="../../index.html">
+                        Home
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <a href="../../component.html">
+                        Component
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <span>
+                        Branching Scenario
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- breadcrumb ends -->
+
+        <!-- content starts -->
+
+        <div class="custom-content-container">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12">
+                        <h1 class="preview-title">
+                            <strong>Branching Scenario Carousel</strong>
+                            Component
+                        </h1>
+
+                        <div class="bx--row">
+                            <div class="bx--col-lg-6">
+                                <div class="bx--row">
+                                    <div class="bx--col-lg-1"></div>
+                                    <div class="bx--col-lg-10">
+                                        <div class="component-container">
+                                            <img src="../../assets/gif/Branching Scenario.gif" class="component-preview" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="bx--col-lg-1"></div>
+                                </div>
+                                
+
+                            </div>
+                            <div class="bx--col-lg-6">
+                                <div class="code-wrapper">
+                                    <div class="code-wrapper-header bg-000000"></div>
+                                    <textarea class="code-area" id="sample" disabled>
+<style>
+    .branchWrap {
+        height: 70vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        background: #120103;
+        color: #fff;
+        text-align: center;
+    }
+    .branchWrap header {
+        background: #3e474f;
+        box-shadow: 0 0.5em 1em #111;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 900;
+        width: 100%;
+    }
+    .branchWrap header label {
+        color: #788188;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 4.25em;
+        font-size: 0.75em;
+        font-weight: bold;
+        padding: 0 1em;
+    }
+    .branchWrap header label:hover {
+        background: #2e353b;
+    }
+    .branchWrap .slider {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        z-index: 10;
+        padding: 8em 1em 0;
+        /* background image of slide */
+        background: url(https://www.fastcat.com.ph/wp-content/uploads/2016/04/dummy-post-horisontal.jpg) ;
+        background-position: 50% 50%;
+        background-size: cover;
+        transition: left 0s 0.75s;
+    }
+    .branchWrap .choiceHolder {
+        display: flex;
+        width: 300px;
+        margin: 0 auto;
+        justify-content: space-around;
+    }
+    .branchWrap .choiceHolder label {
+        padding: 0.3em 3em;
+        background: #666;
+        border-radius: 20px;
+
+    }
+    .branchWrap .choiceHolder label:hover {
+        cursor: pointer;
+        background: blue;
+    }
+    .branchWrap .slider h1 {
+        opacity: 0;
+        transform: translateY(100%);
+        transition: transform 0.5s 0.5s, opacity 0.5s;
+    }
+    .branchWrap [id^=slide]:checked+.slider {
+        left: 0;
+        z-index: 100;
+        transition: left 0.65s ease-out;
+    }
+    .branchWrap [id^=slide]:checked+.slider h1 {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.5s 0.5s;
+    }
+</style>
+    
+<div class="branchWrap">
+    <!-- slide 1 -->
+    <input id="slider-1-trigger" type="radio" name="sliders" checked>
+    <section class="slider slider-one">
+        <div>
+            <h1>Slide 1 - Does it move?</h1>
+            <div class="choiceHolder">
+                <label for="slider-7-trigger">Yes</label>
+                <label for="slider-2-trigger">No</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- slide 2 -->
+    <input id="slider-2-trigger" type="radio" name="sliders">
+    <section class="slider slider-two">
+        <div>
+            <h1>Slide 2 - Should it?</h1>
+            <div class="choiceHolder">
+                <label for="slider-4-trigger">Yes</label>
+                <label for="slider-3-trigger">No</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- slide 3 -->
+    <input id="slider-3-trigger" type="radio" name="sliders">
+    <section class="slider slider-three">
+        <div>
+            <h1>Slide 3 - No Problem</h1>
+            <div class="choiceHolder">
+                <label for="slider-1-trigger">Back to slider 1</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- slide 4 -->
+    <input id="slider-4-trigger" type="radio" name="sliders">
+    <section class="slider slider-four">
+        <div>
+            <h1>Slide 4 - Put WD40 - Does it still move?</h1>
+            <div class="choiceHolder">
+                <label for="slider-6-trigger">No</label>
+                <label for="slider-5-trigger">Yes</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- slide 5 -->
+    <input id="slider-5-trigger" type="radio" name="sliders">
+    <section class="slider slider-five">
+        <div>
+            <h1>Slide 5 - Use hammer</h1>
+            <div class="choiceHolder">
+                <label for="slider-1-trigger">Back to slider 1</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- slide 6 -->
+    <input id="slider-6-trigger" type="radio" name="sliders">
+    <section class="slider slider-six">
+        <div>
+            <h1>Slide 6 - No Problem</h1>
+            <div class="choiceHolder">
+                <label for="slider-1-trigger">Back to slider 1</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- slide 7 -->
+    <input id="slider-7-trigger" type="radio" name="sliders">
+    <section class="slider slider-seven">
+        <div>
+            <h1>Slide 7 - Should it?</h1>
+            <div class="choiceHolder">
+                <label for="slider-9-trigger">Yes</label>
+                <label for="slider-8-trigger">No</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- slide 8 -->
+    <input id="slider-8-trigger" type="radio" name="sliders">
+    <section class="slider slider-eight">
+        <div>
+            <h1>Slide 8 - Put tape - Still moves?</h1>
+            <div class="choiceHolder">
+                <label for="slider-10-trigger">Yes</label>
+                <label for="slider-6-trigger">No</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- slide 9 -->
+    <input id="slider-9-trigger" type="radio" name="sliders">
+    <section class="slider slider-Nine">
+        <div>
+            <h1>Slide 9 - No Problem</h1>
+            <div class="choiceHolder">
+                <label for="slider-1-trigger">Back to slider 1</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- slide 10 -->
+    <input id="slider-10-trigger" type="radio" name="sliders">
+    <section class="slider slider-ten">
+        <div>
+            <h1>Slide 10 - Put more tape</h1>
+            <div class="choiceHolder">
+                <label for="slider-1-trigger">Back to slider 1</label>
+            </div>
+        </div>
+    </section>
+
+</div>
+                                    </textarea>
+                                    
+                                    <div class="code-btn-wrapper">
+                                        <div class="bx--row">
+                                            <div class="bx--col">
+                                                <a class="code-btn" href="../../xd/Template_Branching Scenario Carousel.xd" download="">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M30 25L28.586 23.586 26 26.172 26 18 24 18 24 26.172 21.414 23.586 20 25 25 30 30 25z"></path><path d="M18,28H8V4h8v6a2.0058,2.0058,0,0,0,2,2h6v3l2,0V10a.9092.9092,0,0,0-.3-.7l-7-7A.9087.9087,0,0,0,18,2H8A2.0058,2.0058,0,0,0,6,4V28a2.0058,2.0058,0,0,0,2,2H18ZM18,4.4,23.6,10H18Z"></path></svg>
+                                                        Download XD File
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="bx--col">
+                                                <div class="code-btn" id="copy" onclick="copyText()">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"></path><path d="M5.91 15H26.080000000000002V17H5.91z" transform="rotate(-75 15.996 16)"></path></svg>
+                                                        Copy Code
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <!-- <button id="copy" class="" onclick="copyText()">copy to clipboard</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <hr>
+                        <h2 class="preview-title">How to use?</h2>
+                        <br>
+                        <div class="user-guide-container">
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content ends -->
+
+        <!-- footer starts -->
+
+        <div class="custom-footer bg-000000">
+            <p class="txt-ffffff">
+                Learning Solutions Development PH &#169; 2022
+            </p>
+        </div>
+
+        <!-- footer ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        <script>
+            function copyText() {
+                const copyText = document.getElementById("sample");
+
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+
+                navigator.clipboard.writeText(copyText.value);
+
+                
+            }
+        </script>
+
+
+
+        
+    </body>
+</html>

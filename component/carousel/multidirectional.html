@@ -1,0 +1,916 @@
+<html>
+    <head>
+        <title>Project Blueprint | Component</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <!-- js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../../js/carbon-components.min.js"></script>
+
+    </head>
+    <body>
+
+        <!-- navbar starts -->
+
+        <div class="custom-navbar">
+            <div class="bx--row">
+                <a href="../../index.html" class="custom-navbar-link-logo">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Project <strong>Blueprint</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="../../layout.html" class="custom-navbar-link">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Layout
+                        </div>
+                    </div>
+                </a>
+                <a href="../../component.html" class="custom-navbar-link custom-navbar-link-active">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Component
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- navbar ends -->
+
+        <!-- banner starts -->
+
+        <div class="header-banner" style="background: url(../../assets/Component-Banner.jpg);">
+
+        </div>
+
+        <!-- banner ends -->
+
+        <!-- breadcrumb starts -->
+
+        <div class="custom-breadcrumb">
+            <div class="breadcrumb-link-holder">
+                <p>
+                    <a href="../../index.html">
+                        Home
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <a href="../../component.html">
+                        Component
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <span>
+                        Multidirectional
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- breadcrumb ends -->
+
+        <!-- content starts -->
+
+        <div class="custom-content-container">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12">
+                        <h1 class="preview-title">
+                            <strong>Multidirectional Carousel</strong>
+                            Component
+                        </h1>
+
+                        <div class="bx--row">
+                            <div class="bx--col-lg-6">
+                                <div class="bx--row">
+                                    <div class="bx--col-lg-1"></div>
+                                    <div class="bx--col-lg-10">
+                                        <div class="component-container">
+                                            <img src="../../assets/gif/multidirectional.gif" class="component-preview" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="bx--col-lg-1"></div>
+                                </div>
+                                
+
+                            </div>
+                            <div class="bx--col-lg-6">
+                                <div class="code-wrapper">
+                                    <div class="code-wrapper-header bg-000000"></div>
+                                    <textarea class="code-area" id="sample" disabled>
+<style>
+    .multiWrap {
+        height: 80vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        background: #120103;
+        color: #fff;
+        text-align: center;
+    }
+    .multiWrap header {
+        background: #3e474f;
+        box-shadow: 0 0.5em 1em #111;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 900;
+        width: 100%;
+    }
+    .multiWrap header label {
+        color: #788188;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 4.25em;
+        font-size: 0.75em;
+        font-weight: bold;
+        padding: 0 1em;
+    }
+    .multiWrap header label:hover {
+        background: #2e353b;
+    }
+    .multiWrap .slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        z-index: 10;
+        background-color: #120103;
+        background-position: 50% 50%;
+        background-size: cover;
+        transition: left 0s 0.75s;
+    }
+    .multiWrap .choiceHolder {
+        display: flex;
+        width: 300px;
+        margin: 0 auto;
+        justify-content: space-around;
+    }
+    .multiWrap .choiceHolder label {
+        padding: 0.3em 3em;
+        border-radius: 20px;
+
+    }
+    .multiWrap .upArrow {
+        position: absolute;
+        top: 5%;
+    }
+    .multiWrap .rightArrow {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+    }
+    .multiWrap .downArrow {
+        position: absolute;
+        bottom: 5%;
+    }
+    .multiWrap .leftArrow {
+        position: absolute;
+        left: 5%;
+        top: 50%;
+    }
+    .multiWrap .notActive {
+        color: #666;
+        opacity: 0.5;
+    }
+    .multiWrap .choiceHolder label.notActive:hover {
+        cursor: default;
+    }
+    .multiWrap .choiceHolder label:hover {
+        cursor: pointer;
+    }
+    .multiWrap .slide h1 {
+        opacity: 0;
+        transform: translateY(100%);
+        transition: transform 0.5s 0.5s, opacity 0.5s;
+    }
+    .multiWrap [id^=slide]:checked+.slide {
+        left: 0;
+        z-index: 100;
+        transition: left 0.65s ease-out;
+    }
+    .multiWrap [id^=slide]:checked+.slide h1 {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.5s 0.5s;
+    }
+    .multiWrap input#slide-1-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 10px;
+        right: 100px;
+    }
+    .multiWrap input#slide-1-1-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 30px;
+        right: 100px;
+    }
+    .multiWrap input#slide-1-2-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 50px;
+        right: 100px;
+    }
+    .multiWrap input#slide-1-3-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 70px;
+        right: 100px;
+    }
+    .multiWrap input#slide-1-4-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 90px;
+        right: 100px;
+    }
+    .multiWrap input#slide-1-5-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 110px;
+        right: 100px;
+    }
+    .multiWrap input#slide-2-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 10px;
+        right: 80px;
+    }
+    .multiWrap input#slide-2-1-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 30px;
+        right: 80px;
+    }
+    .multiWrap input#slide-2-2-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 50px;
+        right: 80px;
+    }
+    .multiWrap input#slide-2-3-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 70px;
+        right: 80px;
+    }
+    .multiWrap input#slide-3-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 10px;
+        right: 60px;
+    }
+    .multiWrap input#slide-3-1-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 30px;
+        right: 60px;
+    }
+    .multiWrap input#slide-3-2-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 50px;
+        right: 60px;
+    }
+    .multiWrap input#slide-3-3-trigger {
+        position: absolute;
+        z-index: 200;
+        border: 1px solid black;
+        visibility: visible;
+        top: 70px;
+        right: 60px;
+    }
+</style>
+
+<div class="multiWrap">
+
+    <!-- slide 1 -->
+    <input id="slide-1-trigger" type="radio" name="slides" checked>
+
+    <!-- slide background color -->
+    <section class="slide slide-one" style="background: #6e0a1e;">
+        <div>
+
+            <!-- image src -->
+            <p><img src="assets/MKNZRDJRXQDJJ6RM/ProjectBp_Carousel_Icon01.png" alt=""></p>
+            <!-- slide content -->
+            <h1>Slide 1</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow" for="slide-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow" for="slide-1-1-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 1-1 -->
+    <input id="slide-1-1-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-two" style="background: #8c101c;">
+        <div>
+
+            <!-- slide content -->
+            <h1>Slide 1 - 1</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow" for="slide-1-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow" for="slide-1-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 1-2 -->
+    <input id="slide-1-2-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-three" style="background: #ad1625;">
+        <div>
+
+            <!-- slide content -->
+            <h1>Slide 1 - 2</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow" for="slide-1-1-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow" for="slide-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 2 -->
+    <input id="slide-2-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-four" style="background: #734098;">
+        <div>
+
+            <!-- image src -->
+            <p><img src="assets/EKWQEXPEMZXV2WZD/ProjectBp_Carousel_Icon02.png" alt=""></p>
+            <!-- slide content -->
+            <h1>Slide 2</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow" for="slide-3-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow" for="slide-2-1-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow" for="slide-1-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 2-1 -->
+    <input id="slide-2-1-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-five" style="background: #9855d4;">
+        <div>
+
+            <!-- slide content -->
+            <h1>Slide 2 - 1</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow" for="slide-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow" for="slide-2-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 2-2 -->
+    <input id="slide-2-2-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-six" style="background: #af6ee8;">
+        <div>
+
+            <!-- slide content -->
+            <h1>Slide 2 - 2</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow" for="slide-2-1-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow" for="slide-2-3-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 2-3 -->
+    <input id="slide-2-3-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-seven" style="background: #ba8ff7;">
+        <div>
+
+            <!-- slide content -->
+            <h1>Slide 2 - 3</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow" for="slide-2-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow" for="slide-3-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow" for="slide-1-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 3 -->
+    <input id="slide-3-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-eight" style="background: #012b22;">
+        <div>
+
+            <!-- image src -->
+            <p><img src="assets/KXKJPVEPZRVVPENM/ProjectBp_Carousel_Icon03.png" alt=""></p>
+            <!-- slide content -->
+            <h1>Slide 3</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow" for="slide-3-1-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow" for="slide-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 3-1 -->
+    <input id="slide-3-1-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-Nine" style="background: #003c32;">
+        <div>
+
+            <!-- slide content -->
+            <h1>Slide 3 - 1</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow" for="slide-3-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow" for="slide-3-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 3-2 -->
+    <input id="slide-3-2-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-ten" style="background: #005448;">
+        <div>
+
+            <!-- slide content -->
+            <h1>Slide 3 - 2</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow" for="slide-3-1-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow" for="slide-3-3-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- slide 3-3 -->
+    <input id="slide-3-3-trigger" type="radio" name="slides">
+
+    <!-- slide background color -->
+    <section class="slide slide-ten" style="background: #006d5d;">
+        <div>
+
+            <!-- slide content -->
+            <h1>Slide 3 - 3</h1>
+
+            <!-- slide arrow icons -->
+            <div class="choiceHolder">
+                <label class="upArrow" for="slide-3-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 10L26 20 24.6 21.4 16 12.8 7.4 21.4 6 20z"></path>
+                        <title>Chevron up</title>
+                    </svg>
+                </label>
+                <label class="rightArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+                        <title>Chevron right</title>
+                    </svg>
+                </label>
+                <label class="downArrow notActive" for="">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                        <title>Chevron down</title>
+                    </svg>
+                </label>
+                <label class="leftArrow" for="slide-2-trigger">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="50" height="50" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
+                        <title>Chevron left</title>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </section>
+
+</div>
+                                        
+                                    </textarea>
+                                    
+                                    <div class="code-btn-wrapper">
+                                        <div class="bx--row">
+                                            <div class="bx--col">
+                                                <a class="code-btn" href="../../xd/Template_Multidirectional Carousel.xd" download="">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M30 25L28.586 23.586 26 26.172 26 18 24 18 24 26.172 21.414 23.586 20 25 25 30 30 25z"></path><path d="M18,28H8V4h8v6a2.0058,2.0058,0,0,0,2,2h6v3l2,0V10a.9092.9092,0,0,0-.3-.7l-7-7A.9087.9087,0,0,0,18,2H8A2.0058,2.0058,0,0,0,6,4V28a2.0058,2.0058,0,0,0,2,2H18ZM18,4.4,23.6,10H18Z"></path></svg>
+                                                        Download XD File
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="bx--col">
+                                                <div class="code-btn" id="copy" onclick="copyText()">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"></path><path d="M5.91 15H26.080000000000002V17H5.91z" transform="rotate(-75 15.996 16)"></path></svg>
+                                                        Copy Code
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <!-- <button id="copy" class="" onclick="copyText()">copy to clipboard</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <h2 class="preview-title">How to use?</h2>
+                        <br>
+                        <div class="user-guide-container">
+                            <img src="../../assets/user-guide/Step by Step_Multi-directional Carousel.png" class="user-guide-img" alt="">
+                            <p class="txt-ug ug-step-1">
+                                Create a section by drag and dropping the &#39;<span class="blue">Section</span>&#39; component into the stage and within the section, drag and drop the
+                                &#39;<span class="red">HTML</span>&#39; component.
+                            </p>
+                            <p class="txt-ug ug-step-2">
+                                Upon selecting which component to use, you can simply copy the HTML code provided in the repository site buy clicking the 
+                                &#39;<strong>Copy Code</strong>&#39; button.
+                                <br><br>
+                                A downloadable template is also available for use for wireframing by clicking the 
+                                &#39;<strong>Downloadable XD File</strong>&#39;.
+                            </p>
+                            <p class="txt-ug ug-step-3">
+                                Paste the code on the <strong>HTML</strong> section to replicate the desired component into the Bundles site.
+                            </p>
+
+                            <p class="txt-ug ug-step-4-1-multidirectional">
+                                Look for the line 
+                                &#39;<span class="green">&lt;!-- slide 1 --&gt;</span>&#39; <br>
+                                to <strong>edit the carousel&#39;s main slide.</strong>  
+                            </p>
+                            <p class="txt-ug ug-step-4-2-multidirectional">
+                                Look for
+                                &#39;<span class="red">style= "background:</span>&#39; <br>
+                                to <strong>to edit the slide&#39;s color.</strong>  
+                            </p>
+                            <p class="txt-ug ug-step-4-3-multidirectional">
+                                To <strong>edit the slide&#39;s icon</strong>, look for the line
+                                &#39;<span class="green">img src=</span>&#39; 
+                                and highlight the image link and click <strong>&#39;Browse Assets&#39;</strong>
+                                to upload an image to replace the placeholder.
+                            </p>
+                            <p class="txt-ug ug-step-4-4-multidirectional">
+                                And for the slide&#39;s title, look for the line &#39;<span class="blue">&lt;h1&gt;</span>&#39;
+                                and edit the text within the line.
+                            </p>
+                            <p class="txt-ug ug-step-4-5-multidirectional">
+                                Look for the line 
+                                &#39;<span class="green">&lt;!-- slide 1-1 --&gt;</span>&#39; <br>
+                                to <strong>edit the carousel&#39;s sub-slide
+                                    (slide below the main).</strong>  
+                            </p>
+                            <p class="txt-ug ug-step-4-6-multidirectional">
+                                Look for
+                                &#39;<span class="red">style= "background:</span>&#39; <br>
+                                to <strong>to edit the slide&#39;s color.</strong>  
+                            </p>
+                            <p class="txt-ug ug-step-4-7-multidirectional">
+                                And for the slide&#39;s text content, look for the line &#39;<span class="blue">&lt;h1&gt;</span>&#39;
+                                and edit the text within the line.
+                            </p>
+                            <p class="txt-ug ug-step-4-8-multidirectional">
+                                <strong>NOTE:</strong> <br>
+                                Lines such as
+                                &#39;<span class="green">&lt;!-- slide 1 --&gt;</span>&#39;
+                                and
+                                &#39;<span class="green">&lt;!-- slide 2 --&gt;</span>&#39;
+                                indicates <strong>main slides</strong> (horizontal slides)
+                                of the carousel.
+                                <br><br>
+                                While lines such as
+                                &#39;<span class="green">&lt;!-- slide 1-1 --&gt;</span>&#39;
+                                &nbsp;
+                                &#39;<span class="green">&lt;!-- slide 1-2 --&gt;</span>&#39;
+                                indicates <strong>sub-slides</strong> (vertical slides) of the carousel.
+                            </p>
+                        </div>
+                                                
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content ends -->
+
+        <!-- footer starts -->
+
+        <div class="custom-footer bg-000000">
+            <p class="txt-ffffff">
+                Learning Solutions Development PH &#169; 2022
+            </p>
+        </div>
+
+        <!-- footer ends -->
+
+
+        <script>
+            function copyText() {
+                const copyText = document.getElementById("sample");
+
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+
+                navigator.clipboard.writeText(copyText.value);
+
+                
+            }
+        </script>
+
+
+
+        
+    </body>
+</html>

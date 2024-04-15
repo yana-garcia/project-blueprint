@@ -1,0 +1,377 @@
+<html>
+    <head>
+        <title>Project Blueprint | Component</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <!-- js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../../js/carbon-components.min.js"></script>
+
+    </head>
+    <body>
+
+        <!-- navbar starts -->
+
+        <div class="custom-navbar">
+            <div class="bx--row">
+                <a href="../../index.html" class="custom-navbar-link-logo">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Project <strong>Blueprint</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="../../layout.html" class="custom-navbar-link">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Layout
+                        </div>
+                    </div>
+                </a>
+                <a href="../../component.html" class="custom-navbar-link custom-navbar-link-active">
+                    <div class="bx--col">
+                        <div class="custom-navbar-item">
+                            Component
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- navbar ends -->
+
+        <!-- banner starts -->
+
+        <div class="header-banner" style="background: url(../../assets/Component-Banner.jpg);">
+
+        </div>
+
+        <!-- banner ends -->
+
+        <!-- breadcrumb starts -->
+
+        <div class="custom-breadcrumb">
+            <div class="breadcrumb-link-holder">
+                <p>
+                    <a href="../../index.html">
+                        Home
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <a href="../../component.html">
+                        Component
+                    </a>
+                    <span class="breadcrumb-divider">/</span>
+                    <span>
+                        Flipcard with Icon
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- breadcrumb ends -->
+
+        <!-- content starts -->
+
+        <div class="custom-content-container">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12">
+                        <h1 class="preview-title">
+                            <strong>Flipcard with Icon</strong>
+                            Component
+                        </h1>
+
+                        <div class="bx--row">
+                            <div class="bx--col-lg-6">
+                                <div class="bx--row">
+                                    <div class="bx--col-lg-1"></div>
+                                    <div class="bx--col-lg-10">
+                                        <div class="component-container">
+                                            <img src="../../assets/gif/Flip Card.gif" class="component-preview" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="bx--col-lg-1"></div>
+                                </div>
+                                
+
+                            </div>
+                            <div class="bx--col-lg-6">
+                                <div class="code-wrapper">
+                                    <div class="code-wrapper-header bg-000000"></div>
+                                    <textarea class="code-area" id="sample" disabled>
+<style>
+    .card8 .animation {
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    .card8 .pageTitle sup {
+        font-size: .6em;
+        color: #333;
+    }
+    .card8 .well {
+        padding: 3%;
+        margin: 20px auto;
+        border:none;
+        text-align: center;
+    }
+    .card8 .well p {
+        font-weight: 300;
+    }
+    .card8 .content p {   
+        font-weight: 300;
+    }
+    .card8 .cardContainer {
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        transition: all .3s ease;
+        
+        /*depth of the elements */
+        -webkit-perspective: 800px;
+        -moz-perspective: 800px;
+        -o-perspective: 800px;
+        perspective: 800px;
+    
+        /*border: 1px solid #ff0000;*/
+        padding-left: 1%;
+    }
+    .card8 .secondRow {
+        margin-top: -1.4%
+    }
+    .card8 .card {
+        width: 99%;
+        min-height: 200px;
+        cursor: pointer;
+        
+        /*transition effects */
+        -webkit-transition: -webkit-transform 0.6s;
+        -moz-transition: -moz-transform 0.6s;
+        -o-transition: -o-transform 0.6s;
+        transition: transform 0.6s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .card8 .card.flipped {
+        -webkit-transform: rotateY( 180deg );
+        -moz-transform: rotateY( 180deg );
+        -o-transform: rotateY( 180deg );
+        transform: rotateY( 180deg );
+    }
+    .card8 .card .front,
+    .card8 .card .back {
+        display: block;
+        width: 100%;
+        line-height: 60px;
+        color: white;
+        text-align: center;
+        font-size: 1em;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+        box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
+    }
+    .card8 .card .back {
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 3%;
+        font-size: 16px;
+        text-align: left;
+        line-height: 25px;
+    }
+    .card8 .card .back {
+        background-color: blue; /* back face background color */
+        -webkit-transform: rotateY( 180deg );
+        -moz-transform: rotateY( 180deg );
+        -o-transform: rotateY( 180deg );
+        transform: rotateY( 180deg );
+    }
+    
+    /*Colors for front and back applied here*/
+    .card8 .card .front {
+        background-color: blue; /* front face background color */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .card8 .card .front img {
+        width: 100px;
+    }
+    .card8 h3.cardTitle {
+        line-height: 1.2em;
+        margin-top: 8%;
+        font-weight: 600;
+    }
+    .card8 .content h3.cardTitle {
+        margin-top: 0%;
+    }
+    .card8 .content {
+        padding: 4%;
+        font-weight: 100;
+        text-align: left;
+        font-weight: bold;
+    }
+    .card8 a.view-larger-link {
+        display: none !important;
+    }
+</style>
+
+<div class="card8">
+    <div class="card">
+
+        <!-- front face container -->
+        <div class="front">
+            <!-- image src -->
+            <img src="assets/EKWQEWENPMWMEJND/ProjectBP_CardIcon.svg" alt="">
+            <!-- flip card title -->
+            <p class="cardTitle">Click to Flip</p>
+        </div>
+
+        <!-- back face container -->
+        <div class="back">
+            <div class="content">
+                <!-- flip card content -->
+                <p class="cardTitle">This is Card 1</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, ipsam!</p>
+                <br>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    // script for flip card
+    $('.card8 .card').click(function(){
+        $(this).toggleClass('flipped');
+    });
+</script> 
+                                    </textarea>
+                                    
+                                    <div class="code-btn-wrapper">
+                                        <div class="bx--row">
+                                            <div class="bx--col">
+                                                <a class="code-btn" href="../../xd/Template_Flip Card.xd" download="">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M30 25L28.586 23.586 26 26.172 26 18 24 18 24 26.172 21.414 23.586 20 25 25 30 30 25z"></path><path d="M18,28H8V4h8v6a2.0058,2.0058,0,0,0,2,2h6v3l2,0V10a.9092.9092,0,0,0-.3-.7l-7-7A.9087.9087,0,0,0,18,2H8A2.0058,2.0058,0,0,0,6,4V28a2.0058,2.0058,0,0,0,2,2H18ZM18,4.4,23.6,10H18Z"></path></svg>
+                                                        Download XD File
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="bx--col">
+                                                <div class="code-btn" id="copy" onclick="copyText()">
+                                                    <span>
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"></path><path d="M5.91 15H26.080000000000002V17H5.91z" transform="rotate(-75 15.996 16)"></path></svg>
+                                                        Copy Code
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <!-- <button id="copy" class="" onclick="copyText()">copy to clipboard</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <hr>
+                        <h2 class="preview-title">How to use?</h2>
+                        <br>
+                        <div class="user-guide-container">
+                            <img src="../../assets/user-guide/Step by Step_Flip Card.png" class="user-guide-img" alt="">
+                            <p class="txt-ug ug-step-1">
+                                Create a section by drag and dropping the &#39;<span class="blue">Section</span>&#39; component into the stage and within the section, drag and drop the
+                                &#39;<span class="red">HTML</span>&#39; component.
+                            </p>
+                            <p class="txt-ug ug-step-2">
+                                Upon selecting which component to use, you can simply copy the HTML code provided in the repository site buy clicking the 
+                                &#39;<strong>Copy Code</strong>&#39; button.
+                                <br><br>
+                                A downloadable template is also available for use for wireframing by clicking the 
+                                &#39;<strong>Downloadable XD File</strong>&#39;.
+                            </p>
+                            <p class="txt-ug ug-step-3">
+                                Paste the code on the <strong>HTML</strong> section to replicate the desired component into the Bundles site.
+                            </p>
+                            <p class="txt-ug ug-step-4-flipcard">
+                                Look for the line <br>
+                                &#39;<span class="green">/*Colors for front and back applied here*/</span>&#39;
+                                to edit the card&#39;s front and back color.    
+                            </p>
+                            <p class="txt-ug ug-step-5-flipcard">
+                                And the lines, <br>
+                                &#39;<span class="green">&lt;!-- flip card title --&gt;</span>&#39;, <br>
+                                and <br>
+                                &#39;<span class="green">&lt;!-- flip card content --&gt;</span>&#39; <br>
+                                <strong>to edit the card&#39;s
+                                front and back text content.</strong> 
+                            </p>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content ends -->
+
+        <!-- footer starts -->
+
+        <div class="custom-footer bg-000000">
+            <p class="txt-ffffff">
+                Learning Solutions Development PH &#169; 2022
+            </p>
+        </div>
+
+        <!-- footer ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        <script>
+            function copyText() {
+                const copyText = document.getElementById("sample");
+
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+
+                navigator.clipboard.writeText(copyText.value);
+
+                
+            }
+        </script>
+
+
+
+        
+    </body>
+</html>
